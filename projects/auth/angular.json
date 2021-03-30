@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "rebaseRootRelativeCssUrls": true,
             "outputPath": "dist/auth",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
@@ -21,7 +22,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@material/dist/collection/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
               "src/styles.css",

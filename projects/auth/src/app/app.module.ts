@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import {AngularMaterialModule} from './material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import {AngularMaterialModule} from './material.module';
     BrowserModule,
     AppRoutingModule,
     AngularMaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
   ],

@@ -1,23 +1,41 @@
-<div>
-    <mat-toolbar color="primary">
-      <span><mat-icon>mood</mat-icon></span>
-  
-      <span>Yay, Material in Angular 2!</span>
-  
-      <button mat-icon-button [mat-menu-trigger-for]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-    </mat-toolbar>
-    <mat-menu x-position="before" #menu="matMenu">
-      <button mat-menu-item>Option 1</button>
-      <button mat-menu-item>Option 2</button>
-    </mat-menu>
-  
-    <mat-card>
-      <button mat-button>All</button>
-      <button mat-raised-button>Of</button>
-      <button mat-raised-button color="primary">The</button>
-      <button mat-raised-button color="accent">Buttons</button>
+<mat-grid-list cols="2" rowHeight="100vh">
+
+  <mat-grid-tile>
+    <figure style="text-align: center;">
+      <a href="#">
+        <img src="http://localhost:4200/assets/business.jpg" width="650px">
+      </a>
+      <figcaption>Desk to perform more on your work</figcaption>
+      <small>Get ready for your presence to make sense</small>
+    </figure>
+  </mat-grid-tile>
+
+  <mat-grid-tile style="background: black">
+    <mat-card style="width: 400px;">
+
+      <form (ngSubmit)="onSignin()" [formGroup]="form">
+
+        <div>
+          <mat-form-field class="input-width">
+            <!-- <mat-label>Email</mat-label> -->
+            <input matInput placeholder="Email" id="email" name="email" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="legacy" class="input-width">
+            <!-- <mat-label>Password</mat-label> -->
+            <input matInput placeholder="Password" type="password" id="password" name="password"
+              formControlName="password">
+            <mat-icon matSuffix>visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="pink">Login </button>
+
+      </form>
+
     </mat-card>
-  
-  </div>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -3,7 +3,7 @@ import { registerApplication, start } from "single-spa";
 registerApplication({
   name: "auth",
   app: () => System.import("http://localhost:4200/main.js"),
-  activeWhen: ["/"]
+  activeWhen: ["/auth"]
 });
 
 registerApplication({
